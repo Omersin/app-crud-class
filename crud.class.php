@@ -22,5 +22,26 @@
             } catch (\PDOException $e) {
              throw new \PDOException($e->getMessage(), (int)$e->getCode());
             }
-        } 
+        }
+
+        public function getQueryAll($sql)
+        {
+            $query = $this->pdo->query($sql,PDO::FETCH_ASSOC)->fetchAll();
+            if ($query)
+            {
+                return $query;
+            }else{
+                return false;
+            }
+        }
+        public function getQuerySingle($sql)
+        {
+               $query = $this->pdo->query($sql,PDO::FETCH_ASSOC)->fetch();
+            if ($query)
+            {
+                return $query;
+            }else{
+                return false;
+            }
+        }
     }
