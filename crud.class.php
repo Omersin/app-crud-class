@@ -2,7 +2,7 @@
     class PhpYardimlasmaGrubu
     {
         /* VERİTABANI BAĞLANTISI İÇİN GEREKLİ PARAMETRELER TANIMLANDI.. */
-        protected $db = null;
+        protected $pdo = null;
         protected $host = 'localhost';
         protected $user = 'root';
         protected $pass = '';
